@@ -4,6 +4,7 @@ import { Html } from '@react-three/drei'
 import Navbar from './Navbar.tsx'
 import Homepage from './Homepage.tsx'
 
+
 import Blob from'./Blob.tsx'
 
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className='h-screen w-screen bg-[#121212]'>
 
-<div className='absolute z-10'>
+<div className='absolute z-5'>
       <Navbar />
 
       <Homepage/>

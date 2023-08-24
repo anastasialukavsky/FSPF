@@ -11,6 +11,7 @@ export default function Homepage() {
           <p> Bringing Ideas to Life with Code and Creativity</p>
         </div>
       </div>
+      <section className="about-section h-[500px] w-screen bg-white" ></section>
     </main>
   );
 }
