@@ -10,6 +10,8 @@ import linkedin from '../public/icons/linkedin.svg';
 import github from '../public/icons/github.svg';
 import gmail from '../public/icons/gmail.svg';
 import { CSSPlugin } from 'gsap/CSSPlugin';
+import { Canvas } from '@react-three/fiber';
+import Blob2 from './Blob2';
 
 gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 // gsap.registerPlugin(AutoAlphaPlugin);
@@ -167,12 +169,11 @@ export default function Homepage() {
 
   // letters.forEach((char) => {
   //   let tl = gsap.timeline({repeat: 1, yoyo: true});
-  //   tl.to('text', 
+  //   tl.to('text',
   //   {
   //     duration: 1, text: char
   //   })
   // })
-
 
   // const handleAnimUpdate= () => {
   //   if(text && cursor) {
@@ -181,7 +182,9 @@ export default function Homepage() {
   // }
 
   useLayoutEffect(() => {
-
+    if (!projects) {
+      return;
+    }
     let ctx = gsap.context(() => {
       {
         /**horizontal scroll anim */
@@ -224,15 +227,6 @@ export default function Homepage() {
         },
       });
 
-
-
-
-
-
-
-
-
-
       // gsap.fromTo(
       //   '.cursor',
       //   {
@@ -246,7 +240,6 @@ export default function Homepage() {
       //     repeat: -1,
       //   }
       // );
-
 
       // gsap.from('#text', {
       //   width: 2,
@@ -364,15 +357,22 @@ export default function Homepage() {
         id='home'
         className='hero-section flex flex-col justify-center items-center h-full xs:-translate-y-[30%] md:-translate-y-[10%]'
       >
+        <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
+          <Blob2 />
+        </Canvas>
+
+
+        
         <p className='self-end xs:pr-4 pr-[5%] font-mono xs:text-[1.8vw] md:text-[.8vw]'>
           hello, i am
         </p>
         <h1
           id='text'
           className='font-dida text-[6.7vw] leading-none text-center'
-        >FULLSTACK DEVELOPER
+        >
+          FULLSTACK DEVELOPER
         </h1>
-          {/* <span id='cursor' className='cursor'>
+        {/* <span id='cursor' className='cursor'>
             |
           </span> */}
 
@@ -478,6 +478,7 @@ export default function Homepage() {
           </div>
         </div>
       </section>
+
       {/**projects section */}
       <section
         id='projects'
