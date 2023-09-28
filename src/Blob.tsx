@@ -58,7 +58,7 @@ export default function Blob() {
 
   const light = new THREE.AmbientLight(0x404040); // soft white light
   scene.add(light);
-  const envMap = useEnvironment({ files: '/test.hdr' });
+  // const envMap = useEnvironment({ files: '/test.hdr' });
 
   const textureLoader = new THREE.TextureLoader();
   const base = textureLoader.load('./Water_002_COLOR.jpg');
@@ -86,7 +86,7 @@ export default function Blob() {
 
   const material = new THREE.MeshStandardMaterial({
     ...materialProps,
-    envMap: envMap,
+    // envMap: envMap,
     map: base,
     roughnessMap: roughness,
     aoMap: ao,
