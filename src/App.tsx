@@ -43,10 +43,10 @@ function App() {
       {/* <ProgressBar /> */}
         {/* <Navbar /> */}
 
+        {/* <Blob/> */}
         <Homepage />
  
       {/* <div className='absolute top-0 right-0 bg-transparent z-0'> */}
-        {/* <Blob/> */}
       {/* </div> */}
     </div>
   );
